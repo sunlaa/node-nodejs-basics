@@ -1,11 +1,11 @@
 import { join } from 'path';
-import { rm } from 'fs/promises';
+import { unlink } from 'fs/promises';
 
 const remove = async () => {
   const toRemove = join(import.meta.dirname, 'files', 'fileToRemove.txt');
 
   try {
-    await rm(toRemove);
+    await unlink(toRemove);
   } catch (err) {
     if (err.code === 'ENOENT') {
       throw new Error('FS operation failed');
