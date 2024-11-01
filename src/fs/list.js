@@ -2,10 +2,10 @@ import { join } from 'path';
 import { readdir } from 'fs/promises';
 
 const list = async () => {
-  const toRead = join(import.meta.dirname, 'files');
+  const toList = join(import.meta.dirname, 'files');
 
   try {
-    const files = await readdir(toRead);
+    const files = await readdir(toList);
 
     console.log(files);
   } catch (err) {
